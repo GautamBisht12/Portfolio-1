@@ -1,0 +1,91 @@
+* {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+/* #about {
+  transform: skewY(-2deg);
+} */
+#skew {
+  transform: skewY(-2deg);
+}
+#about-container {
+  transform: skewY(2deg);
+}
+.skills {
+  transform: skewY(2deg);
+}
+/* .glass-background {
+  @apply bg-[#ffffff]/30 backdrop-blur border shadow-inner;
+} */
+.glass-background {
+  @apply bg-[#ffffff]/30 border hover:border-blue-400 shadow-inner;
+}
+
+.dark-mode-button {
+  @apply bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200;
+  @apply hover:bg-gray-300 dark:hover:bg-gray-700;
+  @apply transition duration-150 ease-in-out;
+}
+
+.sun-icon,
+.moon-icon {
+  @apply fill-current;
+}
+
+.moon-icon {
+  @apply hidden lg:block;
+}
+
+.box-shadow {
+  @apply bg-[#191924] rounded-md hover:bg-gray-50 hover:shadow-lg hover:text-[#191924];
+}
+
+#card {
+  -webkit-box-shadow: 0px 0px 129px 8px rgba(245, 46, 255, 0.9);
+  -moz-box-shadow: 0px 0px 129px 8px rgba(245, 46, 255, 0.9);
+  box-shadow: 0px 0px 129px 8px rgba(245, 46, 255, 0.9);
+}
+.tilt-effect {
+  @apply transition duration-300 ease-in-out transform hover:-translate-y-4;
+}
+.glow-btn {
+  -webkit-box-shadow: 0px 0px 42px 20px rgba(234, 46, 255, 0.72);
+  -moz-box-shadow: 0px 0px 42px 20px rgba(234, 46, 255, 0.72);
+  box-shadow: 0px 0px 42px 20px rgba(234, 46, 255, 0.72);
+}
+
+.card-glow {
+  /* -webkit-box-shadow: 0px 0px 29px 11px rgba(255, 46, 116, 0.765);
+  -moz-box-shadow: 0px 0px 29px 11px rgba(255, 46, 116, 0.9);
+  box-shadow: 0px 0px 29px 11px rgba(255, 46, 116, 0.9); */
+
+  -webkit-box-shadow: 0px 0px 54px 1px rgba(255, 46, 241, 0.9);
+  -moz-box-shadow: 0px 0px 54px 1px rgba(255, 46, 241, 0.9);
+  box-shadow: 0px 0px 54px 1px rgba(255, 46, 241, 0.9);
+}
+.card-glow-yellow {
+  /* -webkit-box-shadow: 0px 0px 172px 27px rgba(241, 255, 46, 0.74);
+  -moz-box-shadow: 0px 0px 172px 27px rgba(241, 255, 46, 0.74);
+  box-shadow: 0px 0px 172px 27px rgba(241, 255, 46, 0.74); */
+
+  -webkit-box-shadow: 0px 0px 172px 2px rgba(241, 255, 46, 0.5);
+  -moz-box-shadow: 0px 0px 172px 2px rgba(241, 255, 46, 0.5);
+  box-shadow: 0px 0px 172px 2px rgba(241, 255, 46, 0.5);
+}
+
+.glass-effect-green {
+  @apply bg-[#c0f4b6]/75 backdrop-blur-sm backdrop-filter brightness-125;
+  border-radius: 10px; /* Optional for rounded corners */
+}
+
+.gradient-bg {
+  /* background-image: linear-gradient(
+    to right,
+    #b8cbb8 0%,
+    #b8cbb8 0%,
+    #b465da 0%,
+    #cf6cc9 33%,
+    #ee609c 66%,
+    #ee609c 100%
+  ); */
+  background-image: linear-gradient(to top, #f43b47 0%, #453a94 100%);
+}
