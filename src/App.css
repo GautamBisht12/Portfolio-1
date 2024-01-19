@@ -89,3 +89,23 @@
   ); */
   background-image: linear-gradient(to top, #f43b47 0%, #453a94 100%);
 }
+
+.drop-shadow {
+  filter: drop-shadow(0.25rem 0.25rem 0.5rem #000000);
+}
+
+/* Skils  */
+.skills-card {
+  @apply flex tilt-effect card-glow glass-background justify-between items-center border-2 rounded-md mt-10 h-[50vh] bg-[#191924] flex-col;
+}
+
+.responsive-nav {
+  @apply md:flex w-1/2 justify-end items-end mr-10;
+}
+
+.res-skills-md {
+  @apply sm:flex flex-row w-full justify-around items-center;
+}
+.res-skills-sm {
+  @apply md:w-full flex-col justify-around items-center;
+}

@@ -105,6 +105,7 @@ export const Projects = [
     githubLink: "https://github.com/GautamBisht12/MovieDB-React-App",
     netlifyLink: "https://movie-db-pro.netlify.app",
     image: "assets/movies.png",
+    shortDesc: "This is a MovieDB web application built using React and Vite.",
     description:
       "This is a MovieDB web application built using React and Vite. This web app allows users to browse movies and TV series, view details, watch trailers, and discover trending content from The Movie Database (TMDb) API. ",
   },
@@ -117,6 +118,8 @@ export const Projects = [
     githubLink: "https://github.com/GautamBisht12/React-Youtube-clone",
     netlifyLink: "https://my-tube-youtube-clone.netlify.app",
     image: "assets/home.jpg.png",
+    shortDesc: "My Tube is a web application built using Vite React ",
+
     description:
       "My Tube is a web application built using Vite React .It allows users to browse and watch YouTube videos using the YouTube v3 API from RapidAPI. ",
   },
@@ -129,6 +132,8 @@ export const Projects = [
     githubLink: "https://github.com/GautamBisht12/React-Todo-App",
     netlifyLink: "",
     image: "assets/todo-img.png",
+    shortDesc: "This is a simple todo list app built using React. ",
+
     description:
       "This is a simple todo list app built using React. It allows users to manage tasks by adding, editing, and deleting them from the list.",
   },
@@ -229,7 +234,7 @@ export const contactForm = [
     type: "email",
   },
   {
-    label: "Message",
+    label: "Subject",
     type: "text",
   },
 ];

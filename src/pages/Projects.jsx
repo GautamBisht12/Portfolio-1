@@ -5,17 +5,17 @@ const Projects = () => {
   return (
     <>
       <div
-        className=" flex min-h-[100vh] justify-center items-center py-20 w-full "
+        className=" flex  min-h-[100vh] justify-center flex-col items-center py-20 w-full "
         id="projects "
       >
         <div
           id="projects"
-          className="w-[90%] px-5 min-h-[100vh]  flex flex-col  justify-center items-center py-12"
+          className="w-[90%]   px-5 min-h-[100vh]  flex flex-col  justify-center items-center py-12"
         >
-          <h1 className="text-center mb-20 text-white font-bold text-4xl">
+          <h1 className="text-center mb-10 text-white font-bold text-4xl">
             My Projects
           </h1>
-          <div className="w-full min-h-[50vh] ">
+          <div className="w-full  flex flex-col justify-center items-center min-h-[50vh] ">
             <Card />
           </div>
 

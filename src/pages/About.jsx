@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 const About = () => {
   return (
     <>
-      <div className="relative  w-full h-[80vh]  flex  justify-start items-center bg-[#1C1E27]">
+      <div className="  relative  w-full min-h-[100vh]  flex max-sm:flex-col justify-around items-center   bg-[#1C1E27]">
         <div
           id="about"
-          className="w-[40%] h-[80vh] flex flex-col justify-center items-center"
+          className="max-sm:mt-[25px] w-[100%] h-[50vh] flex flex-col  justify-center items-center"
         >
           <h1 className="text-center flex animate-bounce gap-5 text-white underline text-3xl mt-10  font-bold">
             {" "}
             About Me{" "}
-            <FaArrowRightLong className="animate-pulse text-red-600 mt-1 text-4xl" />
+            <FaArrowRightLong className="max-sm:hidden animate-pulse text-red-600 mt-1 text-4xl" />
           </h1>
           <img
             className="w-[400px] "
@@ -20,8 +20,8 @@ const About = () => {
             alt=""
           />
         </div>
-        <div className="  relative  flex flex-col justify-center  mt-[50px] ml-[100px] w-[60%]  h-[90vh]   rounded-xl">
-          <div className="glass-background card-glow-yellow px-10 rounded-3xl py-5 w-[70%]">
+        <div className="  max-sm:w-[100%]  max-sm:px-5 max-sm:items-center relative  flex flex-col justify-center items-start  w-[100%]  h-[90vh]   rounded-xl">
+          <div className=" max-sm:w-[90%] glass-background card-glow-yellow px-10 rounded-3xl py-5 w-[80%]">
             <p className="text-justify text-white text-lg font-semibold">
               As a MERN stack developer, I possess a deep understanding of both
               front-end and back-end development. My passion for UI/UX design
