@@ -5,7 +5,7 @@ const Projects = () => {
   return (
     <>
       <div
-        className=" flex  min-h-[100vh] justify-center flex-col items-center py-20 w-full "
+        className=" flex  min-h-[100vh] justify-center flex-col items-center py-10 w-full "
         id="projects "
       >
         <div

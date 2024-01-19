@@ -57,7 +57,7 @@ function ContactForm() {
   return (
     <>
       <div className="w-full mt-[20px] flex justify-center items-center  flex-col h-[100vh] bg-[#1C1E27]">
-        <div className="w-full flex">
+        <div className=" w-full flex">
           <div className="w-[30%] h-[80vh]   flex flex-col items-center    ">
             <div className="w-[30px] animate-pulse rounded-3xl h-[30px] bg-yellow-100   glow-btn mt-[60px]"></div>
             <div className="h-[200px]  animate-pulse glow-btn w-[2px] bg-yellow-400"></div>
@@ -73,23 +73,23 @@ function ContactForm() {
               alt=""
             />
           </div>
-          <div className="w-[70%] h-[80vh] justify-center  flex flex-col  ">
-            <h1 className="text-white text-3xl  mt-16 font-bold mb-6">
+          <div className="   w-[70%] h-[90vh] justify-center  flex flex-col  ">
+            <h1 className="text-white text-3xl max-sm:mt-6 mt-16 font-bold mb-6">
               Let's Connect
             </h1>
-            <div className="card-glow bg-[#191924]   w-[80%] shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div className="card-glow max-sm:h-[90%]  bg-[#191924]  max-sm:p-2 max-sm:w-[90%]  w-[80%] shadow-md rounded px-8 pt-6 pb-8 mb-4">
               <form
                 action="https://formspree.io/f/xdoqkrlo"
                 method="POST"
                 id="contact"
-                className="mb-4 flex flex-col gap-5   "
+                className=" mb-4 flex flex-col gap-5   "
                 onSubmit={handleSubmit}
               >
                 {/* {contactForm.map((item, index) => ( */}
                 <div>
                   <label
                     htmlFor="username"
-                    className="block text-white font-bold mb-2"
+                    className="block max-sm:mb-0 text-white font-bold mb-2"
                   >
                     Name
                   </label>
@@ -108,7 +108,7 @@ function ContactForm() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-white font-bold mb-2"
+                    className="block text-white font-bold  max-sm:mb-0 mb-2"
                   >
                     Email
                   </label>
@@ -127,7 +127,7 @@ function ContactForm() {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-white font-bold mb-2"
+                    className="block  max-sm:mb-0 text-white font-bold mb-2"
                   >
                     Subject
                   </label>
@@ -145,14 +145,14 @@ function ContactForm() {
                 <div>
                   <label
                     htmlFor="textbox"
-                    className="block text-white font-bold mb-2"
+                    className="block  max-sm:mb-0 text-white font-bold mb-2"
                   >
                     Message
                   </label>
                   <textarea
                     cols="102"
                     name="message"
-                    className="max-sm:w-[230px] py-2 px-3"
+                    className="max-sm:w-[219px] rounded py-2 px-3"
                     rows="5"
                   ></textarea>
                 </div>
@@ -166,10 +166,10 @@ function ContactForm() {
             </div>
           </div>
         </div>
-        <div className=" w-full flex justify-end sticky bottom-0 px-10">
+        <div className=" w-full flex justify-start sticky bottom-0 px-10">
           <div
             onClick={() => window.scroll(0, 0)}
-            className=" bg-white w-[40px] h-[40px] card-glow animate-bounce rounded-[50%] glass-background justify-center items-center cursor-pointer flex"
+            className=" bg-white w-[40px]   h-[40px] card-glow animate-bounce rounded-[50%] glass-background justify-center items-center cursor-pointer flex"
           >
             <FaArrowCircleUp className="text-5xl text-white  " />
           </div>
