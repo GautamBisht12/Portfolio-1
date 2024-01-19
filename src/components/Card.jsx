@@ -11,13 +11,13 @@ const Card = () => {
           className=" max-sm:h-[55vh] max-sm:justify-center max-sm:items-center  w-full h-[70vh] py-4 px-16  flex"
           key={project.id}
         >
-          <div className="max-sm:w-[60%] max-sm:gap-[4px] max-sm:h-[50%] max-sm:p-4 max-sm:rounded-[10px]  max-sm:flex-col  w-[49%] card-glow  hover:scale-[1.20] transition-all bg-black flex h-[60%] border rounded-[30px] absolute  hover:z-[2]">
+          <div className="max-sm:w-[80%] max-sm:gap-[4px] max-sm:h-[50%] max-sm:p-4 max-sm:rounded-[10px]  max-sm:flex-col  w-[49%] card-glow  hover:scale-[1.20] transition-all bg-black flex h-[60%] border rounded-[30px] absolute  hover:z-[2]">
             <img
               className="object-contain max-sm:rounded-none  max-sm:scale-2 max-sm:w-[100%] max-sm:object-cover max-sm:p-1 max-sm:h-[70%]  border rounded-[30px]"
               src={project.image}
               alt=""
             />
-            <p className=" hidden max-sm:block text-center text-white ">
+            <p className=" hidden max-sm:block text-[22px] text-center text-white ">
               {project.shortDesc}
             </p>
             <div className="hidden max-sm:flex justify-between px-3">

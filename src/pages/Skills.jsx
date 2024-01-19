@@ -3,12 +3,9 @@ import { resSkills, skills } from "../data";
 const Skills = () => {
   return (
     <>
-      <div id="skew" className=" sm:px-10 md:px-0 min-h-[100vh]  bg-[#191924] ">
-        <div
-          id="skills"
-          className="flex skills  min-h-[100vh] items-center flex-col"
-        >
-          <div className="text-center max-sm:px-14">
+      <div className=" sm:px-10 md:px-0 min-h-[100vh] max-sm:h-[100vh]   bg-[#191924] ">
+        <div id="skills" className="flex min-h-[100vh] items-center flex-col">
+          <div className="text-center  max-sm:px-14">
             <h1 className="text-3xl mt-12 font-bold   text-[#F2F3F4]">
               Skills
             </h1>
@@ -43,12 +40,12 @@ const Skills = () => {
               </div>
             ))}
           </div>
-          <div className="max-sm:w-full max-sm:p-5 max-sm:flex max-sm:flex-wrap  max-sm:h-[80vh]">
-            <div className=" max-sm-w-full max-sm:flex-wrap glass-background max-sm:mb-10 max-sm:rounded-2xl glow-btn   max-sm:justify-center max-sm:items-center  max-sm:flex">
+          <div className="max-sm:w-full max-sm:p-4 max-sm:flex max-sm:flex-wrap   max-sm:h-[60vh]">
+            <div className="md:hidden max-sm:h-[50vh] max-sm-w-full max-sm:flex-wrap glass-background max-sm:mb-10 max-sm:rounded-2xl glow-btn    max-sm:justify-center max-sm:items-center  max-sm:flex">
               {resSkills.map((skill, index) => (
                 <div
                   key={index}
-                  className="max-sm:flex max-sm:justify-center max-sm:rounded-lg max-sm:items-center  max-sm:w-[100px] max-sm:bg-purple-950  max-sm:flex-col max-sm:m-1 max-sm:gap-1 max-sm:h-[60px] "
+                  className="max-sm:flex max-sm:bg-[#252629] max-sm:justify-center max-sm:rounded-lg max-sm:items-center  max-sm:w-[100px]   max-sm:flex-col max-sm:m-1 max-sm:gap-1 max-sm:h-[60px] "
                 >
                   <img
                     className=" max-sm:w-5 max-sm:h-5 w-[30px]"
