@@ -18,9 +18,10 @@ const Navbar = () => {
     <>
       <header className="  bg-[#191924]  z-10 flex justify-between items-center px-5  fixed top-0 w-full text-yellow-50">
         <div className="h-[10vh] max-sm:justify-start   flex justify-end items-center w-[450px]">
-          <h2 className="  text-2xl font-bold ">
+          <h2 className="  text-3xl font-bold ">
             {" "}
-            <span className="max-sm:hidden">Portfolio || </span>Gautam Bisht
+            <span className="max-sm:hidden">Portfolio || </span>{" "}
+            <span className="linear-wipe">Gautam Bisht</span>
           </h2>
         </div>
         <div className="  w-1/2  responsive-nav  flex   ">
@@ -36,7 +37,7 @@ const Navbar = () => {
           </span>
 
           {menuOpen ? (
-            <div className="  w-[200px] flex flex-col transition-all h-screen py-[40px] absolute top-[91px] right-[-1px]  bg-[#1C1E27]">
+            <div className="  w-[200px] flex flex-col transition-all h-screen py-[40px] absolute top-[71px] right-[-1px]  bg-[#1C1E27]">
               {Links.map((item, index) => (
                 <ul
                   key={index}
@@ -58,19 +59,27 @@ const Navbar = () => {
                 </ul>
               ))}
               <div className="mt-[150px] justify-center gap-10  flex max-sm:flex">
-                <Link
-                  to="https://github.com/GautamBisht12"
+                <a
+                  target="blank"
+                  href="https://github.com/GautamBisht12"
                   className=" cursor-pointer "
                 >
-                  <FaGithub size="35" />
-                </Link>
+                  <FaGithub
+                    className="hover:text-blue-400 hover:scale-[1.2]"
+                    size="35"
+                  />
+                </a>
 
-                <Link
-                  to="https://www.linkedin.com/in/gautam-bisht-863225277/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                <a
+                  target="blank"
+                  href="https://www.linkedin.com/in/gautam-bisht-863225277/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                   className="cursor-pointer"
                 >
-                  <FaLinkedin size="35" />
-                </Link>
+                  <FaLinkedin
+                    className="hover:text-blue-400 hover:scale-[1.2]"
+                    size="35"
+                  />
+                </a>
               </div>
             </div>
           ) : null}

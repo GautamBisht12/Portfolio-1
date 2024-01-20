@@ -26,7 +26,7 @@ const Home = () => {
         <div className="absolute top-[290px] animate-spin w-[205px] h-[205px] rounded-[50%] gradient-bg"></div>
         <div
           id="card"
-          className="relative max-sm:top-[20px] top-[40px] w-[200px] h-[200px] rounded-[100px] bg-red-600"
+          className="relative max-sm:top-[39px] top-[40px] w-[200px] h-[200px] rounded-[100px] bg-red-600"
         >
           <img
             className="rounded-[100px] "
@@ -34,7 +34,7 @@ const Home = () => {
             alt="profile"
           />
         </div>
-        <h1 className="text-4xl mt-[90px] mb-5  text-white font-bold">
+        <h1 className="text-4xl mt-[90px] mb-5 linear-wipe  text-white font-bold">
           Gautam Bisht
         </h1>
 
