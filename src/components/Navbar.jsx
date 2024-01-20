@@ -4,6 +4,8 @@ import { Link } from "react-scroll";
 import { IoMenu } from "react-icons/io5";
 import { IoIosClose } from "react-icons/io";
 import { useState, useEffect, useRef } from "react";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,13 +16,16 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="  bg-[#191924] z-10 flex justify-between items-center px-5  fixed top-0 w-full text-yellow-50">
-        <div className="h-[10vh]  flex justify-end items-center w-[450px]">
-          <h2 className="  text-2xl font-bold "> Portfolio || Gautam Bisht</h2>
+      <header className="  bg-[#191924]  z-10 flex justify-between items-center px-5  fixed top-0 w-full text-yellow-50">
+        <div className="h-[10vh] max-sm:justify-start   flex justify-end items-center w-[450px]">
+          <h2 className="  text-2xl font-bold ">
+            {" "}
+            <span className="max-sm:hidden">Portfolio || </span>Gautam Bisht
+          </h2>
         </div>
-        <div className="  w-1/2 responsive-nav  flex   ">
+        <div className="  w-1/2  responsive-nav  flex   ">
           <span
-            className="md:hidden sm:block cursor-pointer"
+            className="md:hidden  sm:block cursor-pointer"
             onClick={toggleMenu}
           >
             {menuOpen ? (
@@ -31,7 +36,7 @@ const Navbar = () => {
           </span>
 
           {menuOpen ? (
-            <div className="  w-[200px] transition-all h-[700px] py-[50px] absolute top-[70px] right-[-1px]  bg-[#1C1E27]">
+            <div className="  w-[200px] flex flex-col transition-all h-screen py-[40px] absolute top-[91px] right-[-1px]  bg-[#1C1E27]">
               {Links.map((item, index) => (
                 <ul
                   key={index}
@@ -52,6 +57,21 @@ const Navbar = () => {
                   </li>
                 </ul>
               ))}
+              <div className="mt-[150px] justify-center gap-10  flex max-sm:flex">
+                <Link
+                  to="https://github.com/GautamBisht12"
+                  className=" cursor-pointer "
+                >
+                  <FaGithub size="35" />
+                </Link>
+
+                <Link
+                  to="https://www.linkedin.com/in/gautam-bisht-863225277/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                  className="cursor-pointer"
+                >
+                  <FaLinkedin size="35" />
+                </Link>
+              </div>
             </div>
           ) : null}
           {Links.map((item, index) => (

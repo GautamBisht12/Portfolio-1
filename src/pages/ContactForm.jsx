@@ -56,9 +56,9 @@ function ContactForm() {
 
   return (
     <>
-      <div className="w-full   mt-[20px]  max-sm:h-[80vh] flex justify-center items-center  flex-col h-[100vh] bg-[#1C1E27]">
-        <div className=" max-sm:h-[100vh] w-full flex">
-          <div className="w-[30%] max-sm:mt-10  max-sm:h-[70vh]  h-[80vh]   flex flex-col items-center    ">
+      <div className="w-full    max-sm:mt-0  max-sm:min-h-[80vh] flex justify-center items-center  flex-col min-h-[100vh] bg-[#1C1E27]">
+        <div className="  max-sm:h-[90vh] max-sm:justify-center  w-full flex">
+          <div className="w-[30%] max-sm:hidden   h-[80vh]   flex flex-col items-center    ">
             <div className="w-[30px] animate-pulse rounded-3xl h-[30px] bg-yellow-100   glow-btn mt-[60px]"></div>
             <div className="h-[200px]  animate-pulse glow-btn w-[2px] bg-yellow-400"></div>
             <img
@@ -73,11 +73,11 @@ function ContactForm() {
               alt=""
             />
           </div>
-          <div className="max-sm:mt-10     max-sm:justify-start  max-sm:h-[70vh] w-[70%] h-[90vh] justify-center  flex flex-col  ">
+          <div className="max-sm:mt-0  max-sm:w-[100%]  max-sm:justify-center max-sm:items-center  max-sm:min-h-[80vh] w-[70%] min-h-[90vh] justify-center  flex flex-col  ">
             <h1 className="text-white text-3xl max-sm:mt-7 mt-16 font-bold mb-6">
               Let's Connect
             </h1>
-            <div className="card-glow       max-sm:h-[95%]  bg-[#191924]  max-sm:p-2 max-sm:w-[90%]  w-[80%] shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div className="card-glow      max-sm:min-h-[65%]  bg-[#191924]  max-sm:p-4 max-sm:w-[90%]  w-[80%] shadow-md rounded px-8 pt-6 pb-8 mb-4">
               <form
                 action="https://formspree.io/f/xdoqkrlo"
                 method="POST"
@@ -85,7 +85,6 @@ function ContactForm() {
                 className=" mb-4     flex flex-col gap-5   "
                 onSubmit={handleSubmit}
               >
-                {/* {contactForm.map((item, index) => ( */}
                 <div className="">
                   <label
                     htmlFor="username"
@@ -142,7 +141,7 @@ function ContactForm() {
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   />
                 </div>
-                <div className="">
+                <div className="w-full max-md:overflow-hidden ">
                   <label
                     htmlFor="textbox"
                     className="block  max-sm:mb-0 text-white font-bold mb-2"
@@ -150,30 +149,30 @@ function ContactForm() {
                     Message
                   </label>
                   <textarea
-                    cols="102"
                     name="message"
-                    className="max-sm:w-[240px] rounded py-2 px-3"
+                    className=" w-full rounded py-2 px-3"
                     rows="5"
                   ></textarea>
                 </div>
                 <div className="  text-center">
                   <button
                     type="submit"
-                    className="bg-blue-500 max-sm:w-full text-white px-4 py-2 mt-4 rounded font-bold hover:bg-blue-700"
+                    className="bg-blue-500 max-sm:w-full text-white px-4 py-2 max-sm:mt-0 mt-4 rounded font-bold hover:bg-blue-700"
                   >
                     Send
                   </button>
                 </div>
               </form>
             </div>
-          </div>
-        </div>
-        <div className=" w-full  flex justify-start sticky max-sm:px-10 max-sm:bottom-[100px] bottom-0 px-0">
-          <div
-            onClick={() => window.scroll(0, 0)}
-            className="  bg-white w-[40px]   h-[40px] card-glow animate-bounce rounded-[50%] glass-background justify-center items-center cursor-pointer flex"
-          >
-            <FaArrowCircleUp className="text-5xl  text-white  " />
+
+            <div className="w-full  flex justify-end  max-sm:justify-center sticky  max-sm:bottom-[10px] bottom-0 px-10">
+              <div
+                onClick={() => window.scroll(0, 0)}
+                className="  bg-white w-[40px]   h-[40px] card-glow animate-bounce rounded-[50%] glass-background justify-center items-center cursor-pointer flex"
+              >
+                <FaArrowCircleUp className="text-5xl  text-black  " />
+              </div>
+            </div>
           </div>
         </div>
       </div>

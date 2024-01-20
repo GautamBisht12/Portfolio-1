@@ -100,7 +100,7 @@
 }
 
 .responsive-nav {
-  @apply md:flex w-1/2 justify-end items-end mr-10;
+  @apply md:flex w-1/2 justify-end items-end mr-3;
 }
 
 .res-skills-md {
