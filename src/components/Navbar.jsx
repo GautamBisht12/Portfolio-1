@@ -55,7 +55,7 @@ const Navbar = ({ hasAllProjects }) => {
           {hasAllProjects ? null : (
             <div>
               {menuOpen ? (
-                <div className="  w-[200px] flex flex-col transition-all h-screen py-[40px] absolute top-[71px] right-[-1px]  bg-[#1C1E27]">
+                <div className="  w-[200px] flex flex-col transition-all h-screen py-[40px] absolute top-[71px] right-[-1px]  bg-[#191924]">
                   {Links.map((item, index) => (
                     <ul
                       key={index}
