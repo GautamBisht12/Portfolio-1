@@ -1,4 +1,5 @@
 import { resSkills, skills } from "../data";
+import About from "./About";
 
 const Skills = () => {
   return (

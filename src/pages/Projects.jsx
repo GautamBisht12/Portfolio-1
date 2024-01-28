@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
+import { useEffect, useState } from "react";
 
 const Projects = () => {
+  const [render, setRender] = useState(false);
+
+  const handleRender = () => {
+    useEffect(() => {
+      setRender(!render);
+    }, [render]);
+  };
+
   return (
     <>
       <div
@@ -22,6 +31,7 @@ const Projects = () => {
           <Link
             className="border glow-btn animate-bounce duration-300 transform translateY-4 hover:translateY-0 rounded-md w-32 text-center  mt-5 p-4 hover:bg-[#191924] font-bold hover:text-white bg-white"
             to="/allprojects"
+            onClick={() => handleRender()}
           >
             View More{" "}
           </Link>

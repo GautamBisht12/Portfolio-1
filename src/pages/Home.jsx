@@ -1,9 +1,7 @@
 import { useTypewriter } from "react-simple-typewriter";
-
 import Skills from "./Skills";
 import About from "./About";
 import Projects from "./Projects";
-
 import ContactForm from "./ContactForm";
 
 const Home = () => {
