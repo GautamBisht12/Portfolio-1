@@ -41,7 +41,7 @@ const Projects = () => {
           <Link
             className="border glow-btn animate-bounce duration-300 transform translateY-4 hover:translateY-0 rounded-md w-32 text-center  mt-5 p-4 hover:bg-[#191924] font-bold hover:text-white bg-white text-black"
             to="/allprojects"
-            onClick={() => handleRender()}
+{/*             onClick={() => handleRender()} */}
           >
             View More{" "}
           </Link>
