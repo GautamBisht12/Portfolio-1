@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { selectDarkMode } from "../store/features/darkModeSlice";
 
 const Projects = () => {
   const [render, setRender] = useState(false);
@@ -11,17 +13,25 @@ const Projects = () => {
     }, [render]);
   };
 
+  const isDarkModeEnabled = useSelector(selectDarkMode);
+
   return (
     <>
       <div
-        className="   flex   min-h-[100vh] justify-center flex-col items-center py-10 w-full "
+        className={`${
+          isDarkModeEnabled ? "darkProjects" : "lightProjects"
+        }   flex   min-h-[100vh] justify-center flex-col items-center py-10 w-full `}
         id="projects "
       >
         <div
           id="projects"
           className="w-[90%]   px-5 min-h-[100vh]  flex flex-col  justify-center items-center py-12"
         >
-          <h1 className="text-center mb-10 text-white font-bold text-4xl">
+          <h1
+            className={`text-center mb-10    ${
+              isDarkModeEnabled ? "text-white" : "text-[#030637]"
+            } font-bold text-4xl`}
+          >
             My Projects
           </h1>
           <div className="w-full  flex flex-col justify-center items-center min-h-[50vh] ">

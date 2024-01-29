@@ -1,9 +1,12 @@
 // import { Link } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Projects } from "../data";
+import { selectDarkMode } from "../store/features/darkModeSlice";
+import { useSelector } from "react-redux";
 // import Button from "./Button";
 
 const Card = () => {
+  const isDarkModeEnabled = useSelector(selectDarkMode);
   return (
     <>
       {Projects.map((project) => (
@@ -39,13 +42,17 @@ const Card = () => {
               </Link>
             </div>
           </div>
-          <div className="max-sm:hidden p-8 w-[45%] hover:scale-[1.20]  glow-btn transition-all bg-gray-200  h-[60%] left-[650px] flex flex-col justify-between  top-[74px] rounded-[70px] border relative">
-            <div className="flex flex-col justify-center  text-black items-center">
+          <div
+            className={`max-sm:hidden p-8 w-[45%] hover:scale-[1.20]   bg-gray-200  h-[60%] left-[650px] flex flex-col justify-between  top-[74px]  ${
+              isDarkModeEnabled ? "darkProjectCard" : "lightProjectCard"
+            }  rounded-[70px] border relative`}
+          >
+            <div className={`flex flex-col justify-center items-center `}>
               <h1 className="font-bold text-2xl mb-4 text-purple-80000">
                 {project.projectName}
               </h1>
 
-              <p className="font-semibold  text-[18.5px]  text-black ">
+              <p className="font-semibold  text-[18.5px]   ">
                 {project.description}
               </p>
             </div>

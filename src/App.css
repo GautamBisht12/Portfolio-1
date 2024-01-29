@@ -54,19 +54,11 @@
 }
 
 .card-glow {
-  /* -webkit-box-shadow: 0px 0px 29px 11px rgba(255, 46, 116, 0.765);
-  -moz-box-shadow: 0px 0px 29px 11px rgba(255, 46, 116, 0.9);
-  box-shadow: 0px 0px 29px 11px rgba(255, 46, 116, 0.9); */
-
   -webkit-box-shadow: 0px 0px 54px 1px rgba(255, 46, 241, 0.9);
   -moz-box-shadow: 0px 0px 54px 1px rgba(255, 46, 241, 0.9);
   box-shadow: 0px 0px 54px 1px rgba(255, 46, 241, 0.9);
 }
 .card-glow-yellow {
-  /* -webkit-box-shadow: 0px 0px 172px 27px rgba(241, 255, 46, 0.74);
-  -moz-box-shadow: 0px 0px 172px 27px rgba(241, 255, 46, 0.74);
-  box-shadow: 0px 0px 172px 27px rgba(241, 255, 46, 0.74); */
-
   -webkit-box-shadow: 0px 0px 172px 2px rgba(241, 255, 46, 0.5);
   -moz-box-shadow: 0px 0px 172px 2px rgba(241, 255, 46, 0.5);
   box-shadow: 0px 0px 172px 2px rgba(241, 255, 46, 0.5);
@@ -78,15 +70,6 @@
 }
 
 .gradient-bg {
-  /* background-image: linear-gradient(
-    to right,
-    #b8cbb8 0%,
-    #b8cbb8 0%,
-    #b465da 0%,
-    #cf6cc9 33%,
-    #ee609c 66%,
-    #ee609c 100%
-  ); */
   background-image: linear-gradient(to top, #f43b47 0%, #453a94 100%);
 }
 
@@ -96,7 +79,7 @@
 
 /* Skils  */
 .skills-card {
-  @apply flex tilt-effect card-glow glass-background justify-between items-center border-2 rounded-md mt-10 h-[50vh] bg-[#191924] flex-col;
+  @apply flex tilt-effect  glass-background justify-between items-center border-2 rounded-md mt-10 h-[50vh] flex-col card-glow;
 }
 
 .responsive-nav {
@@ -112,9 +95,7 @@
 
 .text-animation {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  /* font-size: rem; */
-  /* font-weight: 100; */
-  /* letter-spacing: 2px; */
+
   text-align: center;
   color: #f35626;
   background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
@@ -133,7 +114,6 @@
 }
 
 .linear-wipe {
-  /* font-size: 2vw; */
   text-align: center;
 
   background: linear-gradient(
@@ -145,10 +125,6 @@
     #cf6cc9 33%,
     #ee609c 66%,
     #ee609c 100%
-      /* #28abb4 20%,
-    rgb(234, 46, 255) 40%,
-    rgb(228, 29, 250) 60%,
-    #1ecdf0 80% */
   );
   background-size: 200% auto;
 
@@ -161,8 +137,79 @@
   animation: shine 1s infinite linear;
 }
 
+.glassBackgroundLight {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
 @keyframes shine {
   to {
     background-position: 200% center;
   }
+}
+
+.darkNav,
+.darkSkills,
+.darkProjects {
+  @apply bg-[#191924] text-white;
+}
+.lightNav,
+.lightSkills,
+.lightProjects {
+  @apply bg-[#D0A2F7] text-[#030637];
+}
+.darkHome,
+.darkAbout {
+  @apply bg-[#1C1E27] text-white;
+}
+.lightHome,
+.lightAbout {
+  @apply bg-[#DCBFFF]  text-[#030637];
+}
+
+.darkAboutGlow-Bg {
+  @apply glass-background  card-glow-yellow;
+}
+.lightAboutGlow-Bg {
+  @apply glassBackgroundLight  skillsGradient;
+}
+
+.resume-btn-dark {
+  @apply bg-[#191924] text-white hover:bg-slate-50 hover:text-black transition-all;
+}
+
+.resume-btn-light {
+  @apply bg-[#ADA2FF] text-[#030637]  hover:bg-[#030637] hover:text-white transition-all;
+}
+
+.darkProjectCard {
+  @apply glow-btn transition-all text-black;
+}
+.lightProjectCard {
+  @apply projectsGlow transition-all text-[#030637];
+}
+
+.formSend {
+  @apply bg-[#030637]  text-white hover:bg-white hover:text-[#030637];
+}
+
+.projectsGlow {
+  -webkit-box-shadow: 0px 0px 22px 8px rgba(194, 54, 209, 1);
+  -moz-box-shadow: 0px 0px 22px 8px rgba(194, 54, 209, 1);
+  box-shadow: 0px 0px 22px 8px rgba(194, 54, 209, 1);
+}
+
+.pfpGradient {
+  -webkit-box-shadow: 0px 0px 177px 77px rgba(144, 46, 255, 0.82);
+  -moz-box-shadow: 0px 0px 177px 77px rgba(144, 46, 255, 0.82);
+  box-shadow: 0px 0px 177px 77px rgba(144, 46, 255, 0.82);
+}
+
+.skillsGradient {
+  -webkit-box-shadow: 0px 0px 27px 9px rgba(54, 62, 209, 1);
+  -moz-box-shadow: 0px 0px 27px 9px rgba(54, 62, 209, 1);
+  box-shadow: 0px 0px 27px 9px rgba(54, 62, 209, 1);
 }

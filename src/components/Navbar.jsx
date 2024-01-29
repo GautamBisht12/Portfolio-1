@@ -6,20 +6,19 @@ import { IoIosClose } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import DarkMode from "./DarkMode";
+import { useSelector } from "react-redux";
+import { selectDarkMode } from "../store/features/darkModeSlice";
 
 const Navbar = ({ hasAllProjects }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [render, setRender] = useState(false);
 
+  const isDarkModeEnabled = useSelector(selectDarkMode);
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
-  // const handleRender = () => {
-  //   if (hasAllProjects) {
-  //     setRender(true);
-  //   }
-  // };
 
   const handleRender = () => {
     useEffect(() => {
@@ -28,8 +27,12 @@ const Navbar = ({ hasAllProjects }) => {
   };
   return (
     <>
-      <header className="  bg-[#191924]  z-10 flex justify-between items-center px-5  fixed top-0 w-full text-yellow-50">
-        <div className="h-[10vh] max-sm:justify-start   flex justify-end items-center w-[450px]">
+      <header
+        className={` ${isDarkModeEnabled ? "darkNav" : "lightNav"}
+    
+          z-10 flex justify-between items-center px-5  fixed top-0 w-full text-yellow-50 `}
+      >
+        <div className="5w h-[10vh] max-sm:justify-start   flex justify-end items-center w-[450px]">
           <h2 className="  text-3xl font-bold ">
             {" "}
             <span className="max-sm:hidden">Portfolio || </span>{" "}
@@ -116,7 +119,7 @@ const Navbar = ({ hasAllProjects }) => {
                       offset={-50}
                       duration={50}
                     >
-                      {!hasAllProjects ? item.title : "Home"}
+                      {item.title}
                     </Link>
                   </li>
                 </ul>
@@ -124,13 +127,15 @@ const Navbar = ({ hasAllProjects }) => {
             </div>
           ) : (
             <NavLink
-              className=" text-lg font-bold"
+              className=" text-lg font-bold mr-5"
               to="/"
               onClick={() => handleRender()}
             >
               Home
             </NavLink>
           )}
+
+          <DarkMode />
         </div>
       </header>
     </>

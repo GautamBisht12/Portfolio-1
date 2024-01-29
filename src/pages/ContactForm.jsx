@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { FaArrowCircleUp } from "react-icons/fa";
 import { useForm } from "@formspree/react";
 import { Link, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectDarkMode } from "../store/features/darkModeSlice";
 
 function ContactForm() {
   const [goBackActive, setGoBackActive] = useState(false);
@@ -12,6 +14,7 @@ function ContactForm() {
     subject: "",
   });
 
+  const isDarkModeEnabled = useSelector(selectDarkMode);
   const closePopup = () => {
     setGoBackActive(true);
   };
@@ -47,26 +50,35 @@ function ContactForm() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submission (e.g., send data to a server)
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // Submit form data to your server here
-  //   console.log(formData);
-  // };
-
   return (
     <>
-      <div className="w-full    max-sm:mt-0  max-sm:min-h-[80vh] flex justify-center items-center  flex-col min-h-[100vh] bg-[#1C1E27]">
+      <div
+        className={`w-full    max-sm:mt-0  max-sm:min-h-[80vh] flex justify-center items-center  flex-col min-h-[100vh] ${
+          isDarkModeEnabled ? "bg-[#1C1E27]" : "bg-[#DCBFFF]"
+        }`}
+      >
         <div className="  max-sm:h-[90vh] max-sm:justify-center  w-full flex">
           <div className="w-[30%] max-sm:hidden   h-[80vh]   flex flex-col items-center    ">
-            <div className="w-[30px] animate-pulse rounded-3xl h-[30px] bg-yellow-100   glow-btn mt-[60px]"></div>
-            <div className="h-[200px]  animate-pulse glow-btn w-[2px] bg-yellow-400"></div>
+            <div
+              className={`w-[30px] animate-pulse rounded-3xl h-[30px] sm:mt-[100px] ${
+                isDarkModeEnabled ? "bg-yellow-100" : "bg-[#030637]"
+              }   glow-btn mt-[60px]`}
+            ></div>
+            <div
+              className={`h-[200px]  animate-pulse glow-btn w-[2px]  ${
+                isDarkModeEnabled ? "bg-yellow-100" : "bg-[#030637]"
+              } `}
+            ></div>
             <img
               className="w-[50px]  mt-[-11px]"
               src="https://cdn3d.iconscout.com/3d/premium/thumb/mail-8617068-6815602.png"
               alt="mail"
             />
-            <div className="h-[150px] glow-btn animate-pulse mt-[-6px]  w-[2px] bg-yellow-400"></div>
+            <div
+              className={`h-[200px]  animate-pulse glow-btn w-[2px]  ${
+                isDarkModeEnabled ? "bg-yellow-100" : "bg-[#030637]"
+              } `}
+            ></div>
             <img
               className="w-[50px] mt-[-5px]"
               src="https://static.vecteezy.com/system/resources/previews/010/871/837/original/3d-message-icon-png.png"
@@ -77,18 +89,25 @@ function ContactForm() {
             <h1 className="text-white text-3xl max-sm:mt-7 mt-16 font-bold mb-6">
               Let's Connect
             </h1>
-            <div className="card-glow      max-sm:min-h-[65%]  bg-[#191924]  max-sm:p-4 max-sm:w-[90%]  w-[80%] shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div
+              className={`card-glow      max-sm:min-h-[65%]  ${
+                isDarkModeEnabled ? "bg-[#191924]" : "bg-[#80BCBD]"
+              }  max-sm:p-4 max-sm:w-[90%]  w-[80%] shadow-md rounded px-8 pt-6 pb-8 mb-4 `}
+            >
               <form
                 action="https://formspree.io/f/xdoqkrlo"
                 method="POST"
                 id="contact"
-                className=" mb-4     flex flex-col gap-5   "
+                className={`mb-4     flex flex-col gap-5  ${
+                  isDarkModeEnabled ? "text-white" : "text-[#030637]"
+                }
+                  `}
                 onSubmit={handleSubmit}
               >
                 <div className="">
                   <label
                     htmlFor="username"
-                    className="block max-sm:mb-0 text-white font-bold mb-2"
+                    className="block max-sm:mb-0  font-bold mb-2"
                   >
                     Name
                   </label>
@@ -107,7 +126,7 @@ function ContactForm() {
                 <div className="">
                   <label
                     htmlFor="email"
-                    className="block text-white font-bold  max-sm:mb-0 mb-2"
+                    className="block  font-bold  max-sm:mb-0 mb-2"
                   >
                     Email
                   </label>
@@ -126,7 +145,7 @@ function ContactForm() {
                 <div className="">
                   <label
                     htmlFor="subject"
-                    className="block  max-sm:mb-0 text-white font-bold mb-2"
+                    className="block  max-sm:mb-0  font-bold mb-2"
                   >
                     Subject
                   </label>
@@ -144,7 +163,7 @@ function ContactForm() {
                 <div className="w-full max-md:overflow-hidden ">
                   <label
                     htmlFor="textbox"
-                    className="block  max-sm:mb-0 text-white font-bold mb-2"
+                    className="block  max-sm:mb-0  font-bold mb-2"
                   >
                     Message
                   </label>
@@ -157,7 +176,7 @@ function ContactForm() {
                 <div className="  text-center">
                   <button
                     type="submit"
-                    className="bg-blue-500 max-sm:w-full text-white px-4 py-2 max-sm:mt-0 mt-4 rounded font-bold hover:bg-blue-700"
+                    className=" formSend max-sm:w-full  px-4 py-2 max-sm:mt-0 mt-4 rounded font-bold hover:bg-blue-700"
                   >
                     Send
                   </button>

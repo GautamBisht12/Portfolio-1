@@ -2,12 +2,23 @@ import React from "react";
 import { moreProjects } from "../data";
 import { Card } from "flowbite-react";
 import { Link } from "react-router-dom";
+import { selectDarkMode } from "../store/features/darkModeSlice";
+import { useSelector } from "react-redux";
 
 const AllProjects = () => {
+  const isDarkModeEnabled = useSelector(selectDarkMode);
   return (
-    <section className="flex flex-col bg-[#1C1E27]  justify-center text-center">
+    <section
+      className={`flex flex-col ${
+        isDarkModeEnabled ? "bg-[#1C1E27]" : "bg-[#DCBFFF]"
+      }   justify-center text-center`}
+    >
       <div className=" p-5">
-        <h2 className="text-center text-yellow-50  text-3xl font-bold">
+        <h2
+          className={`text-center ${
+            !isDarkModeEnabled ? "text-[#030637]" : "text-white"
+          }  text-3xl font-bold`}
+        >
           More projects
         </h2>
       </div>
