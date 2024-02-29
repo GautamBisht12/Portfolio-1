@@ -156,6 +156,20 @@
 .darkProjects {
   @apply bg-[#191924] text-white;
 }
+
+.projectDark {
+  @apply bg-[#2d2d39] text-white;
+}
+.projectLight {
+  @apply bg-[#9a5bf1] text-[#030637];
+}
+
+.linkBtnDark {
+  @apply bg-[#171720] text-white;
+}
+.linkBtnLight {
+  @apply bg-[#4a306e] text-[#dce8eb];
+}
 .lightNav,
 .lightSkills,
 .lightProjects {

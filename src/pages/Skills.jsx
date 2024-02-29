@@ -58,7 +58,7 @@ const Skills = () => {
               {resSkills.map((skill, index) => (
                 <div
                   key={index}
-                  className="max-sm:flex bg-[#030637] max-sm:justify-center max-sm:rounded-lg max-sm:items-center  max-sm:w-[100px]   max-sm:flex-col max-sm:m-1 max-sm:gap-1 max-sm:h-[60px] "
+                  className=" sm:hidden max-sm:flex bg-[#030637] max-sm:justify-center max-sm:rounded-lg max-sm:items-center  max-sm:w-[100px]   max-sm:flex-col max-sm:m-1 max-sm:gap-1 max-sm:h-[60px] "
                 >
                   <img
                     className=" max-sm:w-5 max-sm:h-5 w-[30px]"

@@ -28,11 +28,11 @@ const About = () => {
             alt="about image"
           />
         </div>
-        <div className="  max-sm:w-[100%] max-sm:h-[60vh]  max-sm:px-5 max-sm:items-center relative  flex flex-col justify-center items-start  w-[100%]  h-[90vh]   rounded-xl">
+        <div className="sm:px-2  max-sm:w-[100%] max-sm:h-[60vh]  max-sm:px-5 max-sm:items-center relative  flex flex-col justify-center items-start  w-[100%]  h-[90vh]   rounded-xl">
           <div
             className={`max-sm:w-[100%]  max-sm:mb-5 max-sm:mt-0  px-10 rounded-3xl  ${
               isDarkModeEnabled ? "darkAboutGlow-Bg" : "lightAboutGlow-Bg"
-            } py-5 w-[80%] max-sm:text-center max-sm:h-[70%]`}
+            } py-5 w-[80%] max-sm:text-center max-sm:h-[70%] sm:w-[50vw] sm:h-[60vh]`}
           >
             <p className="text-justify max-sm:text-center  max-sm:leading-[24px] text-lg font-semibold">
               As a MERN stack developer, I possess a deep understanding of both
@@ -43,7 +43,7 @@ const About = () => {
               to build user-friendly interfaces that are both beautiful and
               functional.
             </p>
-            <p className=" max-sm:hidden text-justify mb-5 max-sm:mb-4  mt-2 text-lg font-semibold">
+            <p className=" max-md:hidden text-justify mb-5max-sm:mb-4  mt-2 text-lg font-semibold">
               {" "}
               I'm a firm believer in continuous learning and actively seek out
               new techniques and skills to stay ahead of the curve, often
@@ -53,13 +53,15 @@ const About = () => {
               unwavering enthusiasm for crafting innovative projects make me a
               valuable asset to any team.
             </p>
-            <Link
-              className={`${
-                isDarkModeEnabled ? "resume-btn-dark" : "resume-btn-light "
-              }  w-[100px]  text-center px-5 py-2 rounded `}
-            >
-              Resume
-            </Link>
+            <div className="mt-[20px]">
+              <Link
+                className={`${
+                  isDarkModeEnabled ? "resume-btn-dark" : "resume-btn-light "
+                }  w-[100px] text-center px-5 py-2 rounded `}
+              >
+                Resume
+              </Link>
+            </div>
           </div>
         </div>
       </div>

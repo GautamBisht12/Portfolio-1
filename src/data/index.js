@@ -94,20 +94,17 @@ export const skills = [
 export const Projects = [
   {
     id: 1,
-    usedlanguage: [
-      "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_tailwind_icon_130128.png",
-
-      "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K",
-    ],
-    projectName: "Movie Db Pro",
+    usedlanguage: "MERN Stack",
+    projectName: "Live Chat App",
     btnGit: "Github",
     btnNet: "Netlify",
-    githubLink: "https://github.com/GautamBisht12/MovieDB-React-App",
-    netlifyLink: "https://movie-db-pro.netlify.app",
-    image: "assets/movies.png",
-    shortDesc: "This is a MovieDB web application built using React and Vite.",
+    githubLink: "https://github.com/GautamBisht12/mern-chat-App",
+    netlifyLink: "https://mern-chat-app-6nc2.onrender.com",
+    image: "assets/chat-app.png",
+    shortDesc: "Real time chat application using MERN stack and socket.io ",
+
     description:
-      "This is a MovieDB web application built using React and Vite. This web app allows users to browse movies and TV series, view details, watch trailers, and discover trending content from The Movie Database (TMDb) API. ",
+      "This project is a real-time chat application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack along with Socket.IO for WebSocket communication. Tailwind CSS is used for styling, and Daisy UI components are integrated for UI elements.",
   },
   {
     id: 2,
@@ -125,6 +122,24 @@ export const Projects = [
   },
   {
     id: 3,
+    usedlanguage: [
+      "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_tailwind_icon_130128.png",
+
+      "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K",
+    ],
+    projectName: "Movie Db Pro",
+    btnGit: "Github",
+    btnNet: "Netlify",
+    githubLink: "https://github.com/GautamBisht12/MovieDB-React-App",
+    netlifyLink: "https://movie-db-pro.netlify.app",
+    image: "assets/movies.png",
+    shortDesc: "This is a MovieDB web application built using React and Vite.",
+    description:
+      "This is a MovieDB web application built using React and Vite. This web app allows users to browse movies and TV series, view details, watch trailers, and discover trending content from The Movie Database (TMDb) API. ",
+  },
+
+  {
+    id: 4,
     usedlanguage: "React Js",
     projectName: "Todo",
     btnGit: "Github",
@@ -136,6 +151,27 @@ export const Projects = [
 
     description:
       "This is a simple todo list app built using React. It allows users to manage tasks by adding, editing, and deleting them from the list.",
+  },
+
+  {
+    id: 5,
+    image: "assets/weather.js.png",
+    title: "Weather App ",
+    description:
+      "Weather application crafted with a combination of HTML, CSS, and JavaScript. This innovative app provides real-time weather updates, allowing users to effortlessly stay informed about current and forecasted conditions.",
+    languageUsed: "HTML , CSS & JS",
+    githubLink: "https://github.com/GautamBisht12/Weather-App-BootStrap",
+    netlifyLink: "https://weathe-r-j-s.netlify.app",
+  },
+  {
+    id: 6,
+    image: "assets/mern-crud.png",
+    title: "CRUD  ",
+    description:
+      " CRUD (Create, Read, Update, Delete) application built with the MERN stack—MongoDB, Express.js, React.js, and Node.js. This application seamlessly integrates these technologies to provide a comprehensive solution for managing and interacting with data.",
+    languageUsed: "MERN Stack",
+    githubLink: "https://github.com/GautamBisht12/MERN-Crud",
+    live: "",
   },
 ];
 

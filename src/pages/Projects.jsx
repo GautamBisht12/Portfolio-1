@@ -25,7 +25,7 @@ const Projects = () => {
       >
         <div
           id="projects"
-          className="w-[90%]   px-5 min-h-[100vh]  flex flex-col  justify-center items-center py-12"
+          className="w-100%  px-4 min-h-[100vh]  flex flex-col  justify-center items-center py-12"
         >
           <h1
             className={`text-center mb-10    ${
@@ -38,13 +38,13 @@ const Projects = () => {
             <Card />
           </div>
 
-          <Link
+          {/* <Link
             className="border glow-btn animate-bounce duration-300 transform translateY-4 hover:translateY-0 rounded-md w-32 text-center  mt-5 p-4 hover:bg-[#191924] font-bold hover:text-white bg-white text-black"
             to="/allprojects"
             onClick={() => handleRender()}
           >
             View More{" "}
-          </Link>
+          </Link> */}
         </div>
       </div>
     </>
