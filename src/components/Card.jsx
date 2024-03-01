@@ -27,14 +27,18 @@ const Card = () => {
                   isDarkModeEnabled ? "linkBtnDark" : "linkBtnLight"
                 }  text-xl`}
               >
-                <Link to={project.githubLink}>GitHub</Link>
+                <Link target="_blank" to={project.githubLink}>
+                  GitHub
+                </Link>
               </button>
               <button
                 className={`sm:w-[10vw] hover:shadow-2xl sm:h-[7vh]   max-sm:px-[18px] max-sm:py-[10px] rounded-md ${
                   isDarkModeEnabled ? "linkBtnDark" : "linkBtnLight"
                 } text-xl`}
               >
-                <Link to={project.netlifyLink}>Live</Link>
+                <Link target="_blank" to={project.netlifyLink}>
+                  Live
+                </Link>
               </button>
             </div>
           </div>

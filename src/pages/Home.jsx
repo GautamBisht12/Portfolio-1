@@ -10,7 +10,7 @@ const Home = () => {
   const [typeEffect] = useTypewriter({
     words: ["Web Developer ", "React Js Dev", "MERN Stack Dev "],
     loop: {},
-    typeSpeed: 100,
+    typeSpeed: 90,
     deleteSpeed: 100,
   });
 
