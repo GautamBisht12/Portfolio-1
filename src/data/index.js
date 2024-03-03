@@ -158,8 +158,8 @@ export const Projects = [
     image: "assets/weather.js.png",
     title: "Weather App ",
     description:
-      "Weather application crafted with a combination of Bootstrap and JavaScript. This innovative app provides real-time weather updates, allowing users to effortlessly stay informed about current and forecasted conditions.",
-    languageUsed: "Bootstrap & JS",
+      "Weather application crafted with a combination of Html, CSS and JavaScript. This innovative app provides real-time weather updates, allowing users to effortlessly stay informed about current and forecasted conditions.",
+    languageUsed: "HTML, CSS and JS",
     githubLink: "https://github.com/GautamBisht12/Weather-App-BootStrap",
     netlifyLink: "https://weathe-r-j-s.netlify.app",
   },
