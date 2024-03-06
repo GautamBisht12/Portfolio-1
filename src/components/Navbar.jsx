@@ -21,20 +21,31 @@ const Navbar = ({ hasAllProjects }) => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-  gsap.registerPlugin(ScrollTrigger);
-  const tl = gsap.timeline();
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const tl = gsap.timeline();
     const logoAni = () => {
-      tl.from(".logo-text span", {
+      tl.from(".logo-text , .menuLi ,.darkMode", {
         y: -200,
         duration: 1,
         delay: 0.5,
         opacity: 0,
-        stagger: 0.7,
+        stagger: 0.3,
       });
     };
+    // const menuAni = () => {
+    //   tl.from(".menuLi", {
+    //     y: -200,
+    //     scale: 0,
+    //     duration: 1,
+    //     delay: 0.5,
+    //     opacity: 0,
+    //     stagger: 0.7,
+    //   });
+    // };
 
     logoAni();
+    // menuAni();
   }, []);
 
   const handleRender = () => {
@@ -134,10 +145,10 @@ const Navbar = ({ hasAllProjects }) => {
             <div className="flex">
               {Links.map((item, index) => (
                 <ul key={index} className=" flex text-lg font-bold   ">
-                  <li className="mx-5 hidden md:block">
+                  <li className="menuLi mx-5 hidden md:block">
                     <Link
                       to={item.id}
-                      className="cursor-pointer"
+                      className="hover:text-pink-400 cursor-pointer"
                       smooth={true}
                       offset={-50}
                       duration={50}
@@ -157,8 +168,9 @@ const Navbar = ({ hasAllProjects }) => {
               Home
             </NavLink>
           )}
-
-          <DarkMode />
+          <span className="darkMode">
+            <DarkMode />
+          </span>
         </div>
       </header>
     </>

@@ -61,7 +61,7 @@ const Footer = () => {
             to="mailto:bishtgautam012gmail.com"
             className="mailFoot block hover:underline"
           >
-            bishtgautam012@gail.com
+            bishtgautam012@gmail.com
           </Link>
         </div>
         <div className="overflow-hidden right w-[50%] h-[100px]  flex  justify-end items-center gap-5">
