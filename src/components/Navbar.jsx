@@ -33,19 +33,8 @@ const Navbar = ({ hasAllProjects }) => {
         stagger: 0.3,
       });
     };
-    // const menuAni = () => {
-    //   tl.from(".menuLi", {
-    //     y: -200,
-    //     scale: 0,
-    //     duration: 1,
-    //     delay: 0.5,
-    //     opacity: 0,
-    //     stagger: 0.7,
-    //   });
-    // };
 
     logoAni();
-    // menuAni();
   }, []);
 
   const handleRender = () => {
@@ -71,7 +60,7 @@ const Navbar = ({ hasAllProjects }) => {
         </div>
         <div className="  w-1/2  responsive-nav  flex   ">
           <span
-            className="md:hidden  sm:block cursor-pointer"
+            className="lg:hidden  sm:block cursor-pointer"
             onClick={toggleMenu}
           >
             {hasAllProjects ? null : (
@@ -89,7 +78,7 @@ const Navbar = ({ hasAllProjects }) => {
             <div>
               {menuOpen ? (
                 <div
-                  className={`menu-links  w-[200px] flex flex-col transition-all h-screen py-[40px] absolute top-[70px] right-[-1px] ${
+                  className={`menu-links  w-[200px] flex flex-col transition-all h-screen py-[40px] absolute top-[67px] right-[-1px] ${
                     isDarkModeEnabled ? "bg-[#191924]" : "bg-[#D0A2F7]"
                   } `}
                 >
@@ -145,7 +134,7 @@ const Navbar = ({ hasAllProjects }) => {
             <div className="flex">
               {Links.map((item, index) => (
                 <ul key={index} className=" flex text-lg font-bold   ">
-                  <li className="menuLi mx-5 hidden md:block">
+                  <li className="menuLi mx-5 hidden lg:block">
                     <Link
                       to={item.id}
                       className="hover:text-pink-400 cursor-pointer"

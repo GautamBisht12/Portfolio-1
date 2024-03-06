@@ -114,7 +114,7 @@ const About = () => {
               to build user-friendly interfaces that are both beautiful and
               functional.
             </p>
-            <p className="aboutMe-para  max-md:hidden text-justify mb-5max-sm:mb-4  mt-2 text-lg font-semibold">
+            <p className="aboutMe-para  hidden lg:block text-justify mb-5max-sm:mb-4  mt-2 text-lg font-semibold">
               {" "}
               I'm a firm believer in continuous learning and actively seek out
               new techniques and skills to stay ahead of the curve, often
