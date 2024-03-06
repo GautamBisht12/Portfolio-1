@@ -1,4 +1,3 @@
-import React from "react";
 import { moreProjects } from "../data";
 import { Card } from "flowbite-react";
 import { Link } from "react-router-dom";

@@ -9,6 +9,8 @@ import { FaLinkedin } from "react-icons/fa";
 import DarkMode from "./DarkMode";
 import { useSelector } from "react-redux";
 import { selectDarkMode } from "../store/features/darkModeSlice";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Navbar = ({ hasAllProjects }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,6 +21,21 @@ const Navbar = ({ hasAllProjects }) => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+  gsap.registerPlugin(ScrollTrigger);
+  const tl = gsap.timeline();
+  useEffect(() => {
+    const logoAni = () => {
+      tl.from(".logo-text span", {
+        y: -200,
+        duration: 1,
+        delay: 0.5,
+        opacity: 0,
+        stagger: 0.7,
+      });
+    };
+
+    logoAni();
+  }, []);
 
   const handleRender = () => {
     useEffect(() => {
@@ -33,10 +50,12 @@ const Navbar = ({ hasAllProjects }) => {
           z-10 flex justify-between items-center px-5  fixed top-0 w-full text-yellow-50 `}
       >
         <div className="5w h-[10vh] max-sm:justify-start   flex justify-end items-center w-[450px]">
-          <h2 className="  text-3xl font-bold ">
+          <h2 className="logo-text  text-3xl font-bold ">
             {" "}
-            <span className="max-sm:hidden">Portfolio || </span>{" "}
-            <span className="linear-wipe">Gautam Bisht</span>
+            <span className="portfolio-text max-sm:hidden">
+              Portfolio ||{" "}
+            </span>{" "}
+            <span className="name-text linear-wipe">Gautam Bisht</span>
           </h2>
         </div>
         <div className="  w-1/2  responsive-nav  flex   ">
@@ -59,7 +78,7 @@ const Navbar = ({ hasAllProjects }) => {
             <div>
               {menuOpen ? (
                 <div
-                  className={`  w-[200px] flex flex-col transition-all h-screen py-[40px] absolute top-[70px] right-[-1px] ${
+                  className={`menu-links  w-[200px] flex flex-col transition-all h-screen py-[40px] absolute top-[70px] right-[-1px] ${
                     isDarkModeEnabled ? "bg-[#191924]" : "bg-[#D0A2F7]"
                   } `}
                 >
@@ -68,7 +87,7 @@ const Navbar = ({ hasAllProjects }) => {
                       key={index}
                       className=" flex text-lg  h-[10vh] font-bold  items-center justify-center  "
                     >
-                      <li className="mx-5 hover:text-purple-600">
+                      <li className=" mx-5 hover:text-purple-600">
                         <NavLink to={item.link} href={item.id}>
                           <Link
                             to={item.id}

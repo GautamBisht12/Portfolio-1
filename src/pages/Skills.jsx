@@ -1,10 +1,84 @@
 import { useSelector } from "react-redux";
+import { useEffect } from "react";
 import { resSkills, skills } from "../data";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { selectDarkMode } from "../store/features/darkModeSlice";
 
 const Skills = () => {
   const isDarkModeEnabled = useSelector(selectDarkMode);
+  gsap.registerPlugin(ScrollTrigger);
+  const tl = gsap.timeline();
+  useEffect(() => {
+    const skilsTextAni = () => {
+      tl.from(".skills-text ", {
+        opacity: 0,
+
+        x: -200,
+        duration: 0.6,
+        stagger: 1,
+
+        scrollTrigger: {
+          trigger: ".skills-text",
+          start: "top 90%",
+          end: "top 50%",
+          scrub: true,
+        },
+      });
+    };
+    const skillsParaAni = () => {
+      tl.from(".skills-para ", {
+        opacity: 0,
+
+        x: 200,
+        duration: 1,
+        stagger: 2,
+        delay: 0.4,
+        scrollTrigger: {
+          trigger: ".skills-text",
+          start: "top 90%",
+          end: "top 50%",
+          scrub: true,
+        },
+      });
+    };
+    const skillSmCardAni = () => {
+      tl.from(".skillSmCard   ", {
+        opacity: 0,
+        scale: 0,
+        y: -200,
+        duration: 2,
+        stagger: 3,
+        delay: 0.4,
+        scrollTrigger: {
+          trigger: ".skills-text",
+          start: "top 60%",
+          end: "top 25%",
+          scrub: true,
+        },
+      });
+    };
+    const mobileSkillsAni = () => {
+      tl.from(".mobile-skills   ", {
+        opacity: 0,
+        scale: 0,
+        duration: 2,
+        stagger: 3,
+        delay: 0.4,
+        scrollTrigger: {
+          trigger: ".skills-text",
+          start: "top 60%",
+          end: "top 20%",
+          scrub: true,
+        },
+      });
+    };
+    skilsTextAni();
+    skillsParaAni();
+    skillSmCardAni();
+    mobileSkillsAni();
+  }, []);
 
   return (
     <>
@@ -14,9 +88,9 @@ const Skills = () => {
         }`}
       >
         <div id="skills" className="flex min-h-[100vh] items-center flex-col">
-          <div className="text-center  max-sm:px-14">
-            <h1 className="text-3xl mt-12 font-bold  ">Skills</h1>
-            <p className="text-2xl my-[14px] font-bold  ">
+          <div className="text-center  max-sm:px-14 overflow-hidden">
+            <h1 className="skills-text  text-3xl mt-12 font-bold  ">Skills</h1>
+            <p className="skills-para text-2xl my-[14px] font-bold  ">
               Here are some of my skills on which I have been working on .
             </p>
           </div>
@@ -29,7 +103,6 @@ const Skills = () => {
                 }  md:w-[40%]  `}
               >
                 {" "}
-                {/* Use md:w-1/3 to make them take 1/3 of the width on larger screens */}
                 <h2 className="text-2xl  font-bold my-4 h-16 text-[#191924]">
                   {skill.title}
                 </h2>
@@ -37,7 +110,7 @@ const Skills = () => {
                   {skill.skills.map((item, index) => (
                     <div
                       key={index}
-                      className="flex max-sm:w-25  max-sm:flex-col max-sm:m-1 max-sm:gap-1 max-sm:h-[60px] h-12 m-2 text-[#F2F3F4] justify-center gap-4 items-center bg-[#030637]
+                      className="skillSmCard flex max-sm:w-25  max-sm:flex-col max-sm:m-1 max-sm:gap-1 max-sm:h-[60px] h-12 m-2 text-[#F2F3F4] justify-center gap-4 items-center bg-[#030637]
                        font-bold border-2 rounded-xl border-gray-300 w-40"
                     >
                       <img
@@ -54,11 +127,11 @@ const Skills = () => {
             ))}
           </div>
           <div className="max-sm:w-full max-sm:p-4 max-sm:flex max-sm:flex-wrap   max-sm:h-[60vh]">
-            <div className="md:hidden max-sm:h-[50vh] max-sm-w-full max-sm:flex-wrap glass-background max-sm:mb-10 max-sm:rounded-2xl glow-btn    max-sm:justify-center max-sm:items-center  max-sm:flex">
+            <div className=" md:hidden max-sm:h-[50vh] max-sm-w-full max-sm:flex-wrap glass-background max-sm:mb-10 max-sm:rounded-2xl glow-btn    max-sm:justify-center max-sm:items-center  max-sm:flex">
               {resSkills.map((skill, index) => (
                 <div
                   key={index}
-                  className=" sm:hidden max-sm:flex bg-[#030637] max-sm:justify-center max-sm:rounded-lg max-sm:items-center  max-sm:w-[100px]   max-sm:flex-col max-sm:m-1 max-sm:gap-1 max-sm:h-[60px] "
+                  className="mobile-skills sm:hidden max-sm:flex bg-[#030637] max-sm:justify-center max-sm:rounded-lg max-sm:items-center  max-sm:w-[100px]   max-sm:flex-col max-sm:m-1 max-sm:gap-1 max-sm:h-[60px] "
                 >
                   <img
                     className=" max-sm:w-5 max-sm:h-5 w-[30px]"

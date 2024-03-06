@@ -5,6 +5,9 @@ import Projects from "./Projects";
 import ContactForm from "./ContactForm";
 import { selectDarkMode } from "../store/features/darkModeSlice";
 import { useSelector } from "react-redux";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect } from "react";
 
 const Home = () => {
   const [typeEffect] = useTypewriter({
@@ -16,24 +19,49 @@ const Home = () => {
 
   const isDarkModeEnabled = useSelector(selectDarkMode);
 
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const tl = gsap.timeline();
+
+    const homeSecAni = () => {
+      tl.from(".home-ani-text , .home-img", {
+        scale: 0,
+        duration: 1,
+      });
+    };
+    const homeLastName = () => {
+      tl.from(".name", {
+        opacity: 0,
+        y: -200,
+        duration: 1,
+        stagger: 1,
+      });
+    };
+
+    homeSecAni();
+    homeLastName();
+  }, []);
+
   return (
     <>
       <div
         id="home"
-        className={`  w-full h-[90vh] flex flex-col items-center   ${
+        className={`home-ani  w-full h-[90vh] flex flex-col items-center   ${
           isDarkModeEnabled ? "darkHome" : "lightHome"
         }   `}
       >
-        <h1 className="text-2xl mt-[120px] mb-[30px]  font-bold">Hey ✋ I'm</h1>
+        <h1 className="home-ani-text text-2xl mt-[120px] mb-[30px]  font-bold">
+          Hey ✋ I'm
+        </h1>
 
         <div
-          className={`absolute top-[290px] animate-spin w-[208px] h-[206px] rounded-[50%] ${
+          className={`home-img absolute top-[290px] animate-spin w-[208px] h-[206px] rounded-[50%] ${
             isDarkModeEnabled ? "gradient-bg" : "pfpGradient"
           }`}
         ></div>
         <div
           id="card"
-          className="relative max-sm:top-[39px] top-[40px] w-[200px] h-[200px] rounded-[100px] bg-red-600"
+          className="home-img relative max-sm:top-[39px] top-[40px] w-[200px] h-[200px] rounded-[100px] "
         >
           <img
             className="rounded-[100px] "
@@ -41,8 +69,9 @@ const Home = () => {
             alt="profile"
           />
         </div>
-        <h1 className="text-4xl mt-[90px] mb-5 linear-wipe   font-bold">
-          Gautam Bisht
+        <h1 className="name   home-ani text-4xl mt-[90px] mb-5 linear-wipe   font-bold">
+          Gautam
+          <span className="lastName ml-2">Bisht</span>
         </h1>
 
         <h2 className=" text-2xl font-bold">

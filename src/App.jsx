@@ -1,6 +1,7 @@
 import "./index.css";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Skills from "./pages/Skills";
@@ -31,7 +32,7 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
           <Navbar hasAllProjects={hasAllProjects} />
-          <div className="wrapper min-h-[100vh] w-full mt-[10vh]  bg-[#191924]">
+          <div className="overflow-hidden wrapper min-h-[100vh] w-full mt-[10vh]  bg-[#191924]">
             <Routes>
               <Route index element={<Home />} />
               <Route path="/about" element={<About />} />
@@ -41,6 +42,7 @@ function App() {
               <Route path="/allprojects" element={<AllProjects />} />
             </Routes>
           </div>
+          <Footer />
         </BrowserRouter>
       </Provider>
     </>

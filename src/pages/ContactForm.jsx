@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-// import { contactForm } from "../data";
+import { useEffect, useState } from "react";
+
 import { FaArrowCircleUp } from "react-icons/fa";
 import { useForm } from "@formspree/react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectDarkMode } from "../store/features/darkModeSlice";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function ContactForm() {
   const [goBackActive, setGoBackActive] = useState(false);
@@ -14,6 +16,28 @@ function ContactForm() {
     subject: "",
   });
 
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const tl = gsap.timeline();
+
+    const contactAnim = () => {
+      tl.from(" .contactLine, .connect , .contactForm", {
+        x: -300,
+        duration: 1,
+        delay: 2,
+        opacity: 0,
+        stagger: 1,
+        scrollTrigger: {
+          scrub: 3,
+          trigger: ".connectDiv",
+          start: "top 70%",
+          end: "top 50%",
+        },
+      });
+    };
+    contactAnim();
+  }, []);
+
   const isDarkModeEnabled = useSelector(selectDarkMode);
   const closePopup = () => {
     setGoBackActive(true);
@@ -22,11 +46,11 @@ function ContactForm() {
   if (state.succeeded) {
     return (
       <>
-        <div className="flex flex-col justify-center mt-[50px] items-center w-full h-screen">
+        <div className=" flex flex-col justify-center mt-[50px] items-center w-full h-screen">
           <div
             className={`${
               goBackActive ? "hidden" : ""
-            }  relative py-20 max-sm:w-[190px] max-sm:py-10 top-[500px] w-[300px] flex flex-col items-center justify-center  rounded-md bg-purple-950  `}
+            }  relative py-20  max-sm:w-[190px] max-sm:py-10 top-[500px] w-[300px] flex flex-col items-center justify-center  rounded-md bg-purple-950  `}
           >
             <h1 className="text-3xl text-white text-center font-bold">
               Thanks For Messaging
@@ -55,10 +79,10 @@ function ContactForm() {
       <div
         className={`w-full    max-sm:mt-0  max-sm:min-h-[80vh] flex justify-center items-center  flex-col min-h-[100vh] ${
           isDarkModeEnabled ? "bg-[#1C1E27]" : "bg-[#DCBFFF]"
-        }`}
+        } `}
       >
-        <div className="  max-sm:h-[90vh] max-sm:justify-center  w-full flex">
-          <div className="w-[30%] max-sm:hidden   h-[80vh]   flex flex-col items-center    ">
+        <div className="  max-sm:min-h-[90vh] max-sm:justify-center  w-full flex">
+          <div className="contactLine w-[30%] max-sm:hidden   h-[80vh]   flex flex-col items-center    ">
             <div
               className={`w-[30px] animate-pulse rounded-3xl h-[30px] sm:mt-[100px] ${
                 isDarkModeEnabled ? "bg-yellow-100" : "bg-[#030637]"
@@ -85,12 +109,12 @@ function ContactForm() {
               alt=""
             />
           </div>
-          <div className="max-sm:mt-0  max-sm:w-[100%]  max-sm:justify-center max-sm:items-center  max-sm:min-h-[80vh] w-[70%] min-h-[90vh] justify-center  flex flex-col  ">
-            <h1 className="text-white text-3xl max-sm:mt-7 mt-16 font-bold mb-6">
+          <div className="connectDiv max-sm:mt-0  max-sm:w-[100%]  max-sm:justify-center max-sm:items-center  max-sm:min-h-[80vh] w-[70%] min-h-[90vh] justify-center  flex flex-col  ">
+            <h1 className="connect text-white text-3xl max-sm:mt-7 mt-16 font-bold mb-6">
               Let's Connect
             </h1>
             <div
-              className={`card-glow      max-sm:min-h-[65%]  ${
+              className={`contactForm card-glow      max-sm:min-h-[65%]  ${
                 isDarkModeEnabled ? "bg-[#191924]" : "bg-[#80BCBD]"
               }  max-sm:p-4 max-sm:w-[90%]  w-[80%] shadow-md rounded px-8 pt-6 pb-8 mb-4 `}
             >

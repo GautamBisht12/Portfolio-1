@@ -1,25 +1,48 @@
-// import { Link } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Projects } from "../data";
 import { selectDarkMode } from "../store/features/darkModeSlice";
 import { useSelector } from "react-redux";
-// import Button from "./Button";
+import { useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Card = () => {
   const isDarkModeEnabled = useSelector(selectDarkMode);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const tl = gsap.timeline();
+    const projectsCard = () => {
+      tl.from(".project-card", {
+        scale: 0,
+
+        opacity: 0,
+        duration: 1,
+        delay: 0.5,
+        scrollTrigger: {
+          scrub: 4,
+          trigger: ".project-card",
+          start: "top 80%",
+          end: "top 60%",
+        },
+      });
+    };
+    projectsCard();
+  }, []);
+
   return (
     <>
-      <div className="  w-[100%] min-h-[40vh] sm:flex p-6 flex-wrap justify-around items-center gap-10">
+      <div className=" w-[100%] min-h-[40vh] sm:flex p-6 flex-wrap justify-around items-center gap-10">
         {Projects.map((project) => (
           <div
             key={project.id}
-            className={`card max-sm:mb-10 md:w-[40%]   sm:h-[85vh] p-2 py-2   ${
+            className={`project-card card max-sm:mb-10 md:w-[40%]   sm:h-[85vh] p-2 py-2   ${
               isDarkModeEnabled ? "projectDark" : "projectLight"
             } rounded-md hover:scale-[1.1] transition-transform`}
           >
             <img src={project.image} alt={project.projectName} />
-            <div className="details mt-5 p-4 text-lg">
-              <h1 className="font-semibold">{project.description}</h1>
+            <div className=" details mt-5 p-4 text-lg">
+              <h1 className=" font-semibold">{project.description}</h1>
             </div>
             <div className="btns flex justify-between px-5">
               <button

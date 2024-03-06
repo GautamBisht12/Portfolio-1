@@ -1,24 +1,39 @@
-import { Link } from "react-router-dom";
 import Card from "../components/Card";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { selectDarkMode } from "../store/features/darkModeSlice";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Projects = () => {
-  const [render, setRender] = useState(false);
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const tl = gsap.timeline();
 
-  const handleRender = () => {
-    useEffect(() => {
-      setRender(!render);
-    }, [render]);
-  };
+    const projectsAnim = () => {
+      tl.from(".project-text", {
+        scale: 0,
+        opacity: 0,
+        duration: 1,
+
+        scrollTrigger: {
+          scrub: 5,
+          trigger: ".projectsDiv",
+          start: "top 70%",
+          end: "top 50%",
+        },
+      });
+    };
+
+    projectsAnim();
+  }, []);
 
   const isDarkModeEnabled = useSelector(selectDarkMode);
 
   return (
     <>
       <div
-        className={`${
+        className={`projectsDiv ${
           isDarkModeEnabled ? "darkProjects" : "lightProjects"
         }   flex   min-h-[100vh] justify-center flex-col items-center py-10 w-full `}
         id="projects "
@@ -28,23 +43,15 @@ const Projects = () => {
           className="w-100%  px-4 min-h-[100vh]  flex flex-col  justify-center items-center py-12"
         >
           <h1
-            className={`text-center mb-10    ${
+            className={`project-text text-center mb-10    ${
               isDarkModeEnabled ? "text-white" : "text-[#030637]"
             } font-bold text-4xl`}
           >
             My Projects
           </h1>
-          <div className="w-full  flex flex-col justify-center items-center min-h-[50vh] ">
+          <div className=" w-full   flex flex-col justify-center items-center min-h-[50vh] ">
             <Card />
           </div>
-
-          {/* <Link
-            className="border glow-btn animate-bounce duration-300 transform translateY-4 hover:translateY-0 rounded-md w-32 text-center  mt-5 p-4 hover:bg-[#191924] font-bold hover:text-white bg-white text-black"
-            to="/allprojects"
-            onClick={() => handleRender()}
-          >
-            View More{" "}
-          </Link> */}
         </div>
       </div>
     </>
