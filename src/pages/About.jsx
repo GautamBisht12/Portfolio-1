@@ -126,7 +126,7 @@ const About = () => {
             </p>
             <div className="aboutMe-para mt-[20px]">
               <a
-                href="assets/Gautam_Bisht.pdf"
+                href="assets/Gautam-Bisht.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${
