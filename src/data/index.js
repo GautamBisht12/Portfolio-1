@@ -108,6 +108,21 @@ export const Projects = [
   },
   {
     id: 2,
+    usedlanguage: "MERN Stack",
+    projectName: "Todo Application",
+    btnGit: "Github",
+    btnNet: "Netlify",
+    githubLink: "https://github.com/GautamBisht12/Todo-Application-MERN",
+    netlifyLink: "https://github.com/GautamBisht12/Todo-Application-MERN",
+
+    video: "assets/todoV.mp4",
+    shortDesc: "Real time chat application using MERN stack and socket.io ",
+
+    description:
+      " MERN (MongoDB, Express.js, React.js, Node.js) Stack Todo Application with TypeScript backend and authentication. Leveraging the power of MongoDB for data storage, Express.js for server-side operations, React.js for dynamic front-end rendering, and Node.js for server-side logic, our application ensures a seamless flow of data and actions.",
+  },
+  {
+    id: 3,
     usedlanguage: "React Js",
     projectName: "YouTube clone",
     btnGit: "Github",
@@ -121,7 +136,7 @@ export const Projects = [
       "My Tube is a web application built using Vite React .It allows users to browse and watch YouTube videos using the YouTube v3 API from RapidAPI. ",
   },
   {
-    id: 3,
+    id: 4,
     usedlanguage: [
       "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_tailwind_icon_130128.png",
 
@@ -139,7 +154,7 @@ export const Projects = [
   },
 
   {
-    id: 4,
+    id: 5,
     usedlanguage: "React Js",
     projectName: "Todo",
     btnGit: "Github",
@@ -154,7 +169,7 @@ export const Projects = [
   },
 
   {
-    id: 5,
+    id: 6,
     image: "assets/weather.js.png",
     title: "Weather App ",
     description:
@@ -164,7 +179,7 @@ export const Projects = [
     netlifyLink: "https://weathe-r-j-s.netlify.app",
   },
   {
-    id: 6,
+    id: 7,
     image: "assets/mern-crud.png",
     title: "CRUD  ",
     description:

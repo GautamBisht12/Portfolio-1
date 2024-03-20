@@ -40,7 +40,14 @@ const Card = () => {
               isDarkModeEnabled ? "projectDark" : "projectLight"
             } rounded-md hover:scale-[1.1] transition-transform`}
           >
-            <img src={project.image} alt={project.projectName} />
+            <div>
+              {project.id === 2 ? (
+                <video src={project.video} autoPlay={true} muted loop></video>
+              ) : (
+                <img src={project.image} alt={project.projectName} />
+              )}
+            </div>
+
             <div className=" details mt-5 p-4 text-lg">
               <h1 className=" font-semibold">{project.description}</h1>
             </div>
